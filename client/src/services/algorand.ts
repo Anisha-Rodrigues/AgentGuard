@@ -214,9 +214,9 @@ export async function createAtomicTxGroup(
       paymentPayload: {
         x402Version: 2,
         accepted: {
-          scheme: 'exact-avm',
-          network: 'algorand:SGO1GKSzyE7IEPItTxCByw9x8FmnrCDe',
-          amount: String(amountMicroAlgos * 3),
+          scheme: 'exact',
+          network: 'algorand:SGO1GKSzyE7IEPItTxCByw9x8FmnrCDexi9/cOUJOiI=',
+          amount: String(amountMicroAlgos),
           asset: '0',
           payTo: VERIFIER_ADDRS['price-check'],
           maxTimeoutSeconds: 60,
@@ -227,9 +227,9 @@ export async function createAtomicTxGroup(
         },
       },
       paymentRequirements: {
-        scheme: 'exact-avm',
-        network: 'algorand:SGO1GKSzyE7IEPItTxCByw9x8FmnrCDe',
-        amount: String(amountMicroAlgos * 3),
+        scheme: 'exact',
+        network: 'algorand:SGO1GKSzyE7IEPItTxCByw9x8FmnrCDexi9/cOUJOiI=',
+        amount: String(amountMicroAlgos),
         asset: '0',
         payTo: VERIFIER_ADDRS['price-check'],
         maxTimeoutSeconds: 60,
