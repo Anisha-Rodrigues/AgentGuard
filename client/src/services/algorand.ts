@@ -144,9 +144,10 @@ export async function createAtomicTxGroup(
     });
 
   let signedBy: 'pera' | 'autonomous_agent' = 'autonomous_agent';
-  let tx1 = makeTx(senderAddr, VERIFIER_ADDRS['price-check'], 'AgentGuard x402: price-check verifier fee');
-  let tx2 = makeTx(senderAddr, VERIFIER_ADDRS['scam-check'],  'AgentGuard x402: scam-check verifier fee');
-  let tx3 = makeTx(senderAddr, VERIFIER_ADDRS['terms-check'], 'AgentGuard x402: terms-check verifier fee');
+  const now = Date.now();
+  let tx1 = makeTx(senderAddr, VERIFIER_ADDRS['price-check'], `x402-payment-v2-${now}-0`);
+  let tx2 = makeTx(senderAddr, VERIFIER_ADDRS['scam-check'],  `x402-payment-v2-${now}-1`);
+  let tx3 = makeTx(senderAddr, VERIFIER_ADDRS['terms-check'], `x402-payment-v2-${now}-2`);
 
   algosdk.assignGroupID([tx1, tx2, tx3]);
 
@@ -175,9 +176,9 @@ export async function createAtomicTxGroup(
       try { closePeraWalletSignTxnToast(); } catch {}
 
       // Fall back to autonomous agent account
-      tx1 = makeTx(demoAccount.addr, VERIFIER_ADDRS['price-check'], 'AgentGuard x402: price-check verifier fee');
-      tx2 = makeTx(demoAccount.addr, VERIFIER_ADDRS['scam-check'],  'AgentGuard x402: scam-check verifier fee');
-      tx3 = makeTx(demoAccount.addr, VERIFIER_ADDRS['terms-check'], 'AgentGuard x402: terms-check verifier fee');
+      tx1 = makeTx(demoAccount.addr, VERIFIER_ADDRS['price-check'], `x402-payment-v2-${now}-0`);
+      tx2 = makeTx(demoAccount.addr, VERIFIER_ADDRS['scam-check'],  `x402-payment-v2-${now}-1`);
+      tx3 = makeTx(demoAccount.addr, VERIFIER_ADDRS['terms-check'], `x402-payment-v2-${now}-2`);
       algosdk.assignGroupID([tx1, tx2, tx3]);
 
       signedTxns = [
