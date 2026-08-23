@@ -1,0 +1,32 @@
+{
+  "name": "agentguard-client",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "node ./node_modules/vite/bin/vite.js build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@perawallet/connect": "^1.6.0",
+    "@x402-avm/avm": "latest",
+    "@x402-avm/core": "latest",
+    "@x402-avm/fetch": "latest",
+    "@x402/avm": "latest",
+    "@x402/core": "latest",
+    "@x402/fetch": "latest",
+    "algosdk": "^3.7.0",
+    "buffer": "^6.0.3",
+    "lucide-react": "^0.378.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21"
+  }
+}
